@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct LoginView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -16,6 +16,7 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 
+    @StateObject var loginViewVM: LoginViewVM
     var body: some View {
         NavigationView {
             List {
@@ -39,6 +40,9 @@ struct ContentView: View {
                 }
             }
             Text("Select an item")
+        }
+        .onAppear() {
+            loginViewVM.onAppear()
         }
     }
 
@@ -83,6 +87,6 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        LoginView(loginViewVM: LoginViewVMFactory().loginViewVM()).environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

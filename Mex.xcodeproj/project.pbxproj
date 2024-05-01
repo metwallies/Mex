@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		196ACC8F2BE24D5C002779B5 /* LoginViewVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196ACC8E2BE24D5C002779B5 /* LoginViewVM.swift */; };
+		196ACC912BE24DEA002779B5 /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 196ACC902BE24DEA002779B5 /* LoginService.swift */; };
+		1973CF922BE25161005E8F4C /* LoginViewVMFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973CF912BE25161005E8F4C /* LoginViewVMFactory.swift */; };
+		1973CF942BE27A60005E8F4C /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973CF932BE27A60005E8F4C /* KeychainService.swift */; };
+		1973CF982BE28D8A005E8F4C /* TwitterToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973CF972BE28D8A005E8F4C /* TwitterToken.swift */; };
+		198149042BE22BFC00BF1A43 /* OAuthSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198149032BE22BFC00BF1A43 /* OAuthSwift.xcframework */; };
 		19A9350C2BE16022006830F0 /* MexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9350B2BE16022006830F0 /* MexApp.swift */; };
-		19A9350E2BE16022006830F0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9350D2BE16022006830F0 /* ContentView.swift */; };
+		19A9350E2BE16022006830F0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9350D2BE16022006830F0 /* LoginView.swift */; };
 		19A935102BE16025006830F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A9350F2BE16025006830F0 /* Assets.xcassets */; };
 		19A935132BE16025006830F0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A935122BE16025006830F0 /* Preview Assets.xcassets */; };
 		19A935152BE16025006830F0 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A935142BE16025006830F0 /* Persistence.swift */; };
@@ -16,6 +22,12 @@
 		19A935222BE16026006830F0 /* MexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A935212BE16026006830F0 /* MexTests.swift */; };
 		19A9352C2BE16026006830F0 /* MexUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9352B2BE16026006830F0 /* MexUITests.swift */; };
 		19A9352E2BE16026006830F0 /* MexUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9352D2BE16026006830F0 /* MexUITestsLaunchTests.swift */; };
+		19E125892BE2AF3D005B7D07 /* AuthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E125882BE2AF3D005B7D07 /* AuthUser.swift */; };
+		19E1258B2BE2B7D5005B7D07 /* TwitterAuth.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19E1258A2BE2B7D5005B7D07 /* TwitterAuth.plist */; };
+		19E1258D2BE2BE07005B7D07 /* AuthCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1258C2BE2BE07005B7D07 /* AuthCredentials.swift */; };
+		19E1258F2BE2BF62005B7D07 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E1258E2BE2BF62005B7D07 /* AuthResponse.swift */; };
+		19E125942BE2C92C005B7D07 /* OAuthWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E125932BE2C92C005B7D07 /* OAuthWrapper.swift */; };
+		19E125962BE2F961005B7D07 /* LoginDomainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E125952BE2F961005B7D07 /* LoginDomainModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +48,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		196ACC8E2BE24D5C002779B5 /* LoginViewVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewVM.swift; sourceTree = "<group>"; };
+		196ACC902BE24DEA002779B5 /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		1973CF912BE25161005E8F4C /* LoginViewVMFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewVMFactory.swift; sourceTree = "<group>"; };
+		1973CF932BE27A60005E8F4C /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
+		1973CF962BE28AB5005E8F4C /* Mex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mex.entitlements; sourceTree = "<group>"; };
+		1973CF972BE28D8A005E8F4C /* TwitterToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterToken.swift; sourceTree = "<group>"; };
+		198149002BE2295E00BF1A43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		198149032BE22BFC00BF1A43 /* OAuthSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OAuthSwift.xcframework; path = Carthage/Build/OAuthSwift.xcframework; sourceTree = "<group>"; };
 		19A935082BE16022006830F0 /* Mex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A9350B2BE16022006830F0 /* MexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MexApp.swift; sourceTree = "<group>"; };
-		19A9350D2BE16022006830F0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		19A9350D2BE16022006830F0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		19A9350F2BE16025006830F0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19A935122BE16025006830F0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		19A935142BE16025006830F0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -48,6 +68,12 @@
 		19A935272BE16026006830F0 /* MexUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MexUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A9352B2BE16026006830F0 /* MexUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MexUITests.swift; sourceTree = "<group>"; };
 		19A9352D2BE16026006830F0 /* MexUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MexUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		19E125882BE2AF3D005B7D07 /* AuthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUser.swift; sourceTree = "<group>"; };
+		19E1258A2BE2B7D5005B7D07 /* TwitterAuth.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = TwitterAuth.plist; sourceTree = "<group>"; };
+		19E1258C2BE2BE07005B7D07 /* AuthCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentials.swift; sourceTree = "<group>"; };
+		19E1258E2BE2BF62005B7D07 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		19E125932BE2C92C005B7D07 /* OAuthWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthWrapper.swift; sourceTree = "<group>"; };
+		19E125952BE2F961005B7D07 /* LoginDomainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDomainModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				198149042BE22BFC00BF1A43 /* OAuthSwift.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		198149022BE22BFB00BF1A43 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				198149032BE22BFC00BF1A43 /* OAuthSwift.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		19A934FF2BE16022006830F0 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +117,7 @@
 				19A935202BE16026006830F0 /* MexTests */,
 				19A9352A2BE16026006830F0 /* MexUITests */,
 				19A935092BE16022006830F0 /* Products */,
+				198149022BE22BFB00BF1A43 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +134,13 @@
 		19A9350A2BE16022006830F0 /* Mex */ = {
 			isa = PBXGroup;
 			children = (
+				1973CF962BE28AB5005E8F4C /* Mex.entitlements */,
+				198149002BE2295E00BF1A43 /* Info.plist */,
 				19A9350B2BE16022006830F0 /* MexApp.swift */,
-				19A9350D2BE16022006830F0 /* ContentView.swift */,
+				19E125982BE2FC43005B7D07 /* Twitter */,
+				19E125972BE2FC1B005B7D07 /* Login */,
+				19E125902BE2C766005B7D07 /* OAuthWrapping */,
+				1973CF932BE27A60005E8F4C /* KeychainService.swift */,
 				19A9350F2BE16025006830F0 /* Assets.xcassets */,
 				19A935142BE16025006830F0 /* Persistence.swift */,
 				19A935162BE16025006830F0 /* Mex.xcdatamodeld */,
@@ -133,6 +174,38 @@
 			path = MexUITests;
 			sourceTree = "<group>";
 		};
+		19E125902BE2C766005B7D07 /* OAuthWrapping */ = {
+			isa = PBXGroup;
+			children = (
+				19E125932BE2C92C005B7D07 /* OAuthWrapper.swift */,
+				19E125882BE2AF3D005B7D07 /* AuthUser.swift */,
+				19E1258C2BE2BE07005B7D07 /* AuthCredentials.swift */,
+				19E1258E2BE2BF62005B7D07 /* AuthResponse.swift */,
+			);
+			path = OAuthWrapping;
+			sourceTree = "<group>";
+		};
+		19E125972BE2FC1B005B7D07 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				19A9350D2BE16022006830F0 /* LoginView.swift */,
+				196ACC8E2BE24D5C002779B5 /* LoginViewVM.swift */,
+				1973CF912BE25161005E8F4C /* LoginViewVMFactory.swift */,
+				196ACC902BE24DEA002779B5 /* LoginService.swift */,
+				19E125952BE2F961005B7D07 /* LoginDomainModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		19E125982BE2FC43005B7D07 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				19E1258A2BE2B7D5005B7D07 /* TwitterAuth.plist */,
+				1973CF972BE28D8A005E8F4C /* TwitterToken.swift */,
+			);
+			path = Twitter;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +216,7 @@
 				19A935042BE16022006830F0 /* Sources */,
 				19A935052BE16022006830F0 /* Frameworks */,
 				19A935062BE16022006830F0 /* Resources */,
+				198149012BE22AFB00BF1A43 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -238,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19A935132BE16025006830F0 /* Preview Assets.xcassets in Resources */,
+				19E1258B2BE2B7D5005B7D07 /* TwitterAuth.plist in Resources */,
 				19A935102BE16025006830F0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,15 +333,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		198149012BE22AFB00BF1A43 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/OAuthSwift.framework",
+			);
+			name = Carthage;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		19A935042BE16022006830F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E1258F2BE2BF62005B7D07 /* AuthResponse.swift in Sources */,
 				19A935152BE16025006830F0 /* Persistence.swift in Sources */,
-				19A9350E2BE16022006830F0 /* ContentView.swift in Sources */,
+				19A9350E2BE16022006830F0 /* LoginView.swift in Sources */,
+				1973CF922BE25161005E8F4C /* LoginViewVMFactory.swift in Sources */,
+				1973CF942BE27A60005E8F4C /* KeychainService.swift in Sources */,
+				19E1258D2BE2BE07005B7D07 /* AuthCredentials.swift in Sources */,
 				19A935182BE16025006830F0 /* Mex.xcdatamodeld in Sources */,
+				19E125892BE2AF3D005B7D07 /* AuthUser.swift in Sources */,
+				196ACC8F2BE24D5C002779B5 /* LoginViewVM.swift in Sources */,
 				19A9350C2BE16022006830F0 /* MexApp.swift in Sources */,
+				1973CF982BE28D8A005E8F4C /* TwitterToken.swift in Sources */,
+				196ACC912BE24DEA002779B5 /* LoginService.swift in Sources */,
+				19E125942BE2C92C005B7D07 /* OAuthWrapper.swift in Sources */,
+				19E125962BE2F961005B7D07 /* LoginDomainModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,11 +529,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Mex/Mex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mex/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -439,9 +548,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = IM.Mex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -450,11 +562,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Mex/Mex.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Mex/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Mex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -465,11 +579,15 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = IM.Mex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
