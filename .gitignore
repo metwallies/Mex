@@ -1,0 +1,9 @@
+# Any scheme and break point files
+*.xcscheme
+*.xcbkptlist
+
+# Sensitive data
+Mex/Twitter/TwitterAuth.plist
+
+# Any file in Carthage folder
+Carthage/

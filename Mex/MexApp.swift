@@ -13,8 +13,20 @@ struct MexApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let loginViewVM = LoginViewVMFactory().loginViewVM()
+            LoginView(loginViewVM: loginViewVM)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .onOpenURL { url in
+                    onOpenURL(url)
+                }
+        }
+    }
+}
+
+private extension MexApp {
+    func onOpenURL(_ url: URL) {
+        if url.host == "oauth-callback" {
+            OAuthWrapper.handle(url: url)
         }
     }
 }
