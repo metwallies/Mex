@@ -9,7 +9,7 @@ import Foundation
 import OAuthSwift
 
 protocol OAuthWrapping {
-    func authorize(callbackURL: URLConvertible) async -> Result<AuthResponse, Error>
+    func authorize(callbackURL: String) async -> Result<AuthResponse, Error>
 }
 
 enum OAuthWrappingError: Error {
@@ -35,7 +35,7 @@ class OAuthWrapper: OAuthWrapping {
         )
     }
 
-    func authorize(callbackURL: URLConvertible) async -> Result<AuthResponse, Error> {
+    func authorize(callbackURL: String) async -> Result<AuthResponse, Error> {
         await withCheckedContinuation({ continuation in
             let handle = oAuth.authorize(
                 withCallbackURL: callbackURL

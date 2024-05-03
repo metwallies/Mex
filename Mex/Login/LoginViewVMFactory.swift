@@ -19,6 +19,8 @@ struct LoginViewVMFactory {
             accessToken: "https://api.twitter.com/oauth/access_token"
         )
         let loginService = LoginService(oAuth: oAuth, callbackURL: "Mex://oauth-callback/twitter")
-        return LoginViewVM(loginService: loginService)
+        let keychainService = KeychainService()
+        let cachedLoginModelService = CachedLoginModelService(keychainService: keychainService)
+        return LoginViewVM(loginService: loginService, cacheLoginModelService: cachedLoginModelService)
     }
 }

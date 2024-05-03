@@ -9,12 +9,17 @@ import Foundation
 import Security
 
 protocol KeychainServicing {
-    func saveToKeychain(service: String, key: String, value: String)
+    func saveToKeychain(service: String, key: String, value: String) -> Result<(), Error>
     func loadFromKeychain(service: String, key: String) -> String?
 }
 
+enum KeychainServicingErrors: Error {
+    case couldntSaveData
+    case noValue
+}
+
 extension KeychainServicing {
-    func saveToKeychain(service: String, key: String, value: String) {
+    func saveToKeychain(service: String, key: String, value: String) -> Result<(), Error> {
         if let data = value.data(using: .utf8) {
             let query = [
                 kSecClass as String: kSecClassGenericPassword as String,
@@ -28,9 +33,11 @@ extension KeychainServicing {
             let status = SecItemAdd(query, nil)
             guard status == errSecSuccess else {
                 print("Error saving to Keychain: \(status)")
-                return
+                return .failure(KeychainServicingErrors.couldntSaveData)
             }
+            return .success(())
         }
+        return .failure(KeychainServicingErrors.noValue)
     }
 
     func loadFromKeychain(service: String, key: String) -> String? {
