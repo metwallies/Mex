@@ -10,14 +10,37 @@ import SwiftUI
 @main
 struct MexApp: App {
     let persistenceController = PersistenceController.shared
+    @StateObject var mexAppVM = MexAppViewModel(
+        cacheLoginModelService: CachedLoginModelService(
+            keychainService: KeychainService()
+        )
+    )
 
     var body: some Scene {
         WindowGroup {
-            let loginViewVM = LoginViewVMFactory().loginViewVM()
-            LoginView(loginViewVM: loginViewVM)
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .onOpenURL { url in
-                    onOpenURL(url)
+            if mexAppVM.loginDM == nil {
+                loginView
+            } else {
+                tabbarView
+            }
+        }
+    }
+
+    var loginView: some View {
+        let loginViewVM = LoginViewVMFactory().loginViewVM()
+        return LoginView(loginViewVM: loginViewVM)
+            .environmentObject(mexAppVM)
+            .onOpenURL { url in
+                onOpenURL(url)
+            }
+    }
+
+    var tabbarView: some View {
+        TabView {
+            Text("Tweets")
+                .tabItem {
+                    Image(systemName: "1.square.fill")
+                    Text("Tab 1")
                 }
         }
     }

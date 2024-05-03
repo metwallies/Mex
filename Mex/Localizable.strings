@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Mex
+
+  Created by islam metwally on 02.05.24.
+
+*/
+
+"LoginView.Slogan" = "Your X client";
+"LoginView.CTA" = "LOGIN";

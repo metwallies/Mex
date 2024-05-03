@@ -19,7 +19,7 @@ protocol LoginDomainModeling {
     var verifier: String { get }
 }
 
-struct LoginDomainModel: LoginDomainModeling {
+class LoginDomainModel: LoginDomainModeling {
     let screenName: String
     let oauthToken: String
     let userId: String
@@ -29,4 +29,36 @@ struct LoginDomainModel: LoginDomainModeling {
     let refreshToken: String
     let tokenExpiresAt: Date?
     let verifier: String
+
+    init(
+        screenName: String,
+        oauthToken: String,
+        userId: String,
+        oauthTokenSecret: String,
+        key: String,
+        secret: String,
+        refreshToken: String,
+        tokenExpiresAt: Date?,
+        verifier: String
+    ) {
+        self.screenName = screenName
+        self.oauthToken = oauthToken
+        self.userId = userId
+        self.oauthTokenSecret = oauthTokenSecret
+        self.key = key
+        self.secret = secret
+        self.refreshToken = refreshToken
+        self.tokenExpiresAt = tokenExpiresAt
+        self.verifier = verifier
+    }
+}
+
+
+extension LoginDomainModel: Equatable {
+    static func == (lhs: LoginDomainModel, rhs: LoginDomainModel) -> Bool {
+        if lhs.userId == rhs.userId {
+            return true
+        }
+        return false
+    }
 }

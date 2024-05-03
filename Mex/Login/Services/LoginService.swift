@@ -7,7 +7,11 @@
 
 import Foundation
 
-struct LoginService {
+protocol LoginServicing {
+    func login() async -> Result<LoginDomainModeling, Error>
+}
+
+struct LoginService: LoginServicing {
     private let oAuth: OAuthWrapping
     private let callbackURL: String
     
