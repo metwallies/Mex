@@ -19,6 +19,4 @@ final class AuthUser {
         self.userId = userId
         self.oauthTokenSecret = oauthTokenSecret
     }
-
-//    static var shared: AuthUser?
 }
