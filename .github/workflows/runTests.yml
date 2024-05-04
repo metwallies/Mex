@@ -14,14 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install Carthage dependencies
+        run: carthage bootstrap --platform iOS
+
       - name: Set up Xcode
         uses: actions/setup-xcode@v2
         with:
           xcode-version: '14.2'  # Adjust the Xcode version as needed
-
-      - name: Install CocoaPods
-        run: |
-          carthage update --platform iphoneos --use-xcframeworks
 
       - name: Build and test iOS project
         run: xcodebuild test -workspace Mex.xcworkspace -scheme MexTests -destination 'platform=iOS Simulator,name=iPhone 13'  # Adjust the project/workspace name, scheme, and destination as needed
