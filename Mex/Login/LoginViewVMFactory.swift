@@ -6,18 +6,20 @@
 //
 
 import Foundation
+import OAuthSwift
 ///bearer token: AAAAAAAAAAAAAAAAAAAAABlQtgEAAAAAwytJme6L%2FgtXIRdpO2QYZiyPlNM%3DHOjQkABQiw3TLLaTniXrPWiHSWSrrMzZka7zr4kbvfyI6pcABm
 struct LoginViewVMFactory {
 
     func loginViewVM() -> LoginViewVM {
 
-        let oAuth = OAuthWrapper(
+        let oAuth1: OAuth1SwiftProtocol = OAuth1Swift(
             consumerKey: TwitterToken.shared?.key ?? "",
             consumerSecret: TwitterToken.shared?.secret ?? "",
-            requestToken: "https://api.twitter.com/oauth/request_token",
-            authoriseUrl: "https://api.twitter.com/oauth/authorize",
-            accessToken: "https://api.twitter.com/oauth/access_token"
+            requestTokenUrl: "https://api.twitter.com/oauth/request_token",
+            authorizeUrl: "https://api.twitter.com/oauth/authorize",
+            accessTokenUrl: "https://api.twitter.com/oauth/access_token"
         )
+        let oAuth = OAuthWrapper(oAuth1Swift: oAuth1)
         let loginService = LoginService(oAuth: oAuth, callbackURL: "Mex://oauth-callback/twitter")
         let keychainService = KeychainService()
         let cachedLoginModelService = CachedLoginModelService(keychainService: keychainService)

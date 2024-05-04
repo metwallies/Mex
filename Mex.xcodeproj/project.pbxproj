@@ -14,6 +14,7 @@
 		1973CF922BE25161005E8F4C /* LoginViewVMFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973CF912BE25161005E8F4C /* LoginViewVMFactory.swift */; };
 		1973CF942BE27A60005E8F4C /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973CF932BE27A60005E8F4C /* KeychainService.swift */; };
 		1973CF982BE28D8A005E8F4C /* TwitterToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973CF972BE28D8A005E8F4C /* TwitterToken.swift */; };
+		1974FC9F2BE66D1C0088B04C /* OAuth1SwiftMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974FC9E2BE66D1C0088B04C /* OAuth1SwiftMock.swift */; };
 		198149042BE22BFC00BF1A43 /* OAuthSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198149032BE22BFC00BF1A43 /* OAuthSwift.xcframework */; };
 		1984F3D62BE55BED001E8D35 /* LoginViewVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984F3D52BE55BED001E8D35 /* LoginViewVMTests.swift */; };
 		1984F3D82BE55C7D001E8D35 /* LoginServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984F3D72BE55C7D001E8D35 /* LoginServiceMock.swift */; };
@@ -24,6 +25,7 @@
 		19908CC92BE56C5800EB2549 /* OAuthWrapMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19908CC82BE56C5800EB2549 /* OAuthWrapMock.swift */; };
 		19908CCD2BE574FE00EB2549 /* CachedLoginModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19908CCC2BE574FE00EB2549 /* CachedLoginModelTests.swift */; };
 		19908CCF2BE5773A00EB2549 /* KeychainServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19908CCE2BE5773A00EB2549 /* KeychainServiceMock.swift */; };
+		19908CD12BE63DF200EB2549 /* OAuthWrapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19908CD02BE63DF200EB2549 /* OAuthWrapperTests.swift */; };
 		19A9350C2BE16022006830F0 /* MexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9350B2BE16022006830F0 /* MexApp.swift */; };
 		19A9350E2BE16022006830F0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9350D2BE16022006830F0 /* LoginView.swift */; };
 		19A935102BE16025006830F0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A9350F2BE16025006830F0 /* Assets.xcassets */; };
@@ -72,6 +74,7 @@
 		1973CF932BE27A60005E8F4C /* KeychainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		1973CF962BE28AB5005E8F4C /* Mex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mex.entitlements; sourceTree = "<group>"; };
 		1973CF972BE28D8A005E8F4C /* TwitterToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterToken.swift; sourceTree = "<group>"; };
+		1974FC9E2BE66D1C0088B04C /* OAuth1SwiftMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth1SwiftMock.swift; sourceTree = "<group>"; };
 		198149002BE2295E00BF1A43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		198149032BE22BFC00BF1A43 /* OAuthSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OAuthSwift.xcframework; path = Carthage/Build/OAuthSwift.xcframework; sourceTree = "<group>"; };
 		1984F3D52BE55BED001E8D35 /* LoginViewVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewVMTests.swift; sourceTree = "<group>"; };
@@ -83,6 +86,7 @@
 		19908CC82BE56C5800EB2549 /* OAuthWrapMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthWrapMock.swift; sourceTree = "<group>"; };
 		19908CCC2BE574FE00EB2549 /* CachedLoginModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedLoginModelTests.swift; sourceTree = "<group>"; };
 		19908CCE2BE5773A00EB2549 /* KeychainServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainServiceMock.swift; sourceTree = "<group>"; };
+		19908CD02BE63DF200EB2549 /* OAuthWrapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthWrapperTests.swift; sourceTree = "<group>"; };
 		19A935082BE16022006830F0 /* Mex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A9350B2BE16022006830F0 /* MexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MexApp.swift; sourceTree = "<group>"; };
 		19A9350D2BE16022006830F0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 			isa = PBXGroup;
 			children = (
 				19A935212BE16026006830F0 /* MexTests.swift */,
+				19908CD02BE63DF200EB2549 /* OAuthWrapperTests.swift */,
+				1974FC9E2BE66D1C0088B04C /* OAuth1SwiftMock.swift */,
 				19908CCB2BE570F600EB2549 /* Login */,
 			);
 			path = MexTests;
@@ -477,7 +483,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				19908CC72BE56C0400EB2549 /* LoginServiceTests.swift in Sources */,
+				1974FC9F2BE66D1C0088B04C /* OAuth1SwiftMock.swift in Sources */,
 				1984F3D82BE55C7D001E8D35 /* LoginServiceMock.swift in Sources */,
+				19908CD12BE63DF200EB2549 /* OAuthWrapperTests.swift in Sources */,
 				1984F3DA2BE55D1D001E8D35 /* LoginDomainModelMock.swift in Sources */,
 				19908CC92BE56C5800EB2549 /* OAuthWrapMock.swift in Sources */,
 				19A935222BE16026006830F0 /* MexTests.swift in Sources */,
