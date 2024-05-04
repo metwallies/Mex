@@ -1,4 +1,4 @@
-name: Run Tests on PR
+name: iOS Test on PR
 
 on:
   pull_request:
@@ -7,20 +7,22 @@ on:
 
 jobs:
   test:
-    name: Run Tests
-    runs-on: ubuntu-latest
+    name: Run iOS Tests
+    runs-on: macos-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Set up Swift
-        uses: swift-actions/setup-swift@v2
+      - name: Set up Xcode
+        uses: actions/setup-xcode@v2
         with:
-          swift-version: '5.5'  # Adjust the Swift version as needed
+          xcode-version: '14.2'  # Adjust the Xcode version as needed
 
-      - name: Install dependencies
-        run: swift package resolve
+      - name: Install CocoaPods
+        run: |
+          carthage update --platform iphoneos --use-xcframeworks
 
-      - name: Run tests
-        run: swift test
+      - name: Build and test iOS project
+        run: xcodebuild test -workspace Mex.xcworkspace -scheme MexTests -destination 'platform=iOS Simulator,name=iPhone 13'  # Adjust the project/workspace name, scheme, and destination as needed
+
