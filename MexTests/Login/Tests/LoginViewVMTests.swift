@@ -12,7 +12,7 @@ final class LoginViewVMTests: XCTestCase {
     let loginServiceMock = LoginServiceMock()
     let cachedLoginMock = CachedLoginServiceMock()
 
-    func testOnTouchDownCTASuccess() {
+    func testOnTouchDownCTASuccess() async {
         //When
         loginServiceMock.shouldSucceed = true
         cachedLoginMock.shouldSucceed = true
@@ -22,14 +22,14 @@ final class LoginViewVMTests: XCTestCase {
             cacheLoginModelService: cachedLoginMock
         )
         let appVM = MexAppViewModelLoginListenerMock()
-        Task {
-            await sut.onDidTouchDownCTA(app: appVM)
-            //Then
-            XCTAssert(appVM.didSuccessfullyLogin == true)
-        }
+
+        await sut.onDidTouchDownCTA(app: appVM)
+        //Then
+        XCTAssert(appVM.didSuccessfullyLogin == true)
+
     }
 
-    func testOnTouchDownCTAFailure() {
+    func testOnTouchDownCTAFailure() async {
         //When
         loginServiceMock.shouldSucceed = false
         cachedLoginMock.shouldSucceed = false
@@ -39,10 +39,8 @@ final class LoginViewVMTests: XCTestCase {
             cacheLoginModelService: cachedLoginMock
         )
         let appVM = MexAppViewModelLoginListenerMock()
-        Task {
-            await sut.onDidTouchDownCTA(app: appVM)
-            //Then
-            assert(appVM.didSuccessfullyLogin == false)
-        }
+        await sut.onDidTouchDownCTA(app: appVM)
+        //Then
+        assert(appVM.didSuccessfullyLogin == false)
     }
 }

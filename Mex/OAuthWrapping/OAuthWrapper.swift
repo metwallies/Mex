@@ -16,34 +16,36 @@ enum OAuthWrappingError: Error {
     case CouldntParseDataOauth
 }
 
+protocol OAuth1SwiftProtocol {
+    func authorize(withCallbackURL: String, completionHandler: @escaping OAuth1Swift.TokenCompletionHandler)
+}
+
+extension OAuth1Swift: OAuth1SwiftProtocol {
+    func authorize(withCallbackURL: String, completionHandler: @escaping TokenCompletionHandler) {
+        authorize(withCallbackURL: withCallbackURL, headers: nil, completionHandler: completionHandler)
+    }
+
+}
+
 class OAuthWrapper: OAuthWrapping {
-    private let oAuth: OAuth1Swift
+    private let oAuth: OAuth1SwiftProtocol
 
     init(
-        consumerKey: String,
-        consumerSecret: String,
-        requestToken: String,
-        authoriseUrl: String,
-        accessToken: String
+        oAuth1Swift: OAuth1SwiftProtocol
     ) {
-        self.oAuth = OAuth1Swift(
-            consumerKey: consumerKey,
-            consumerSecret: consumerSecret,
-            requestTokenUrl: requestToken,
-            authorizeUrl: authoriseUrl,
-            accessTokenUrl: accessToken
-        )
+        self.oAuth = oAuth1Swift
     }
 
     func authorize(callbackURL: String) async -> Result<AuthResponse, Error> {
-        await withCheckedContinuation({ continuation in
-            let handle = oAuth.authorize(
+
+        await withCheckedContinuation{ continuation in
+            let _: () = oAuth.authorize(
                 withCallbackURL: callbackURL
             ) { [weak self] result in
                 guard let self = self else { return }
                 continuation.resume(returning: self.didRecieveCallback(result))
             }
-        })
+        }
 
     }
 
@@ -58,10 +60,10 @@ private extension OAuthWrapper {
     ) -> Result<AuthResponse, Error> {
         switch result {
         case .success(let (credential, _, params)):
-            guard let user = parseUser(params: params),
-                  let creds = parseCredentials(credential) else {
+            guard let user = parseUser(params: params) else {
                 return .failure(OAuthWrappingError.CouldntParseDataOauth)
             }
+            let creds = parseCredentials(credential)
             let response = AuthResponse(user: user, credentials: creds)
             return .success(response)
         case .failure(let error):
@@ -79,7 +81,7 @@ private extension OAuthWrapper {
         return nil
     }
 
-    func parseCredentials(_ credentials: OAuthSwiftCredential) -> AuthCredentials? {
+    func parseCredentials(_ credentials: OAuthSwiftCredential) -> AuthCredentials {
         return AuthCredentials(
             key: credentials.consumerKey,
             secret: credentials.consumerSecret,
