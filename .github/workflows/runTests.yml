@@ -1,0 +1,17 @@
+# this scrip to run the unit tests everytime we onpen a pull request on main branch
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode_13.0.app && /usr/bin/xcodebuild -version
+    - name: Run tests
+      run: xcodebuild test -scheme Mex -project Mex.xcodeproj -destination 'platform=iOS Simulator,name=iPhone 12,OS=15.0' | xcpretty && exit ${PIPESTATUS[0]}
+
