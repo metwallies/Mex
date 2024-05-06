@@ -15,12 +15,12 @@
 		1973CF942BE27A60005E8F4C /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973CF932BE27A60005E8F4C /* KeychainService.swift */; };
 		1973CF982BE28D8A005E8F4C /* TwitterToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973CF972BE28D8A005E8F4C /* TwitterToken.swift */; };
 		1974FC9F2BE66D1C0088B04C /* OAuth1SwiftMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974FC9E2BE66D1C0088B04C /* OAuth1SwiftMock.swift */; };
-		198149042BE22BFC00BF1A43 /* OAuthSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 198149032BE22BFC00BF1A43 /* OAuthSwift.xcframework */; };
 		1984F3D62BE55BED001E8D35 /* LoginViewVMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984F3D52BE55BED001E8D35 /* LoginViewVMTests.swift */; };
 		1984F3D82BE55C7D001E8D35 /* LoginServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984F3D72BE55C7D001E8D35 /* LoginServiceMock.swift */; };
 		1984F3DA2BE55D1D001E8D35 /* LoginDomainModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984F3D92BE55D1D001E8D35 /* LoginDomainModelMock.swift */; };
 		1984F3DC2BE55EB9001E8D35 /* CachedLoginServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984F3DB2BE55EB9001E8D35 /* CachedLoginServiceMock.swift */; };
 		1984F3DE2BE560BA001E8D35 /* MexAppViewModelLoginListenerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1984F3DD2BE560BA001E8D35 /* MexAppViewModelLoginListenerMock.swift */; };
+		198BED1D2BEE2CEF00019B3D /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 198BED1C2BEE2CEF00019B3D /* OAuthSwift */; };
 		19908CC72BE56C0400EB2549 /* LoginServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19908CC62BE56C0400EB2549 /* LoginServiceTests.swift */; };
 		19908CC92BE56C5800EB2549 /* OAuthWrapMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19908CC82BE56C5800EB2549 /* OAuthWrapMock.swift */; };
 		19908CCD2BE574FE00EB2549 /* CachedLoginModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19908CCC2BE574FE00EB2549 /* CachedLoginModelTests.swift */; };
@@ -76,7 +76,6 @@
 		1973CF972BE28D8A005E8F4C /* TwitterToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterToken.swift; sourceTree = "<group>"; };
 		1974FC9E2BE66D1C0088B04C /* OAuth1SwiftMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuth1SwiftMock.swift; sourceTree = "<group>"; };
 		198149002BE2295E00BF1A43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		198149032BE22BFC00BF1A43 /* OAuthSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OAuthSwift.xcframework; path = Carthage/Build/OAuthSwift.xcframework; sourceTree = "<group>"; };
 		1984F3D52BE55BED001E8D35 /* LoginViewVMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewVMTests.swift; sourceTree = "<group>"; };
 		1984F3D72BE55C7D001E8D35 /* LoginServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceMock.swift; sourceTree = "<group>"; };
 		1984F3D92BE55D1D001E8D35 /* LoginDomainModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDomainModelMock.swift; sourceTree = "<group>"; };
@@ -117,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				198149042BE22BFC00BF1A43 /* OAuthSwift.xcframework in Frameworks */,
+				198BED1D2BEE2CEF00019B3D /* OAuthSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +149,6 @@
 		198149022BE22BFB00BF1A43 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				198149032BE22BFC00BF1A43 /* OAuthSwift.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -310,13 +308,15 @@
 				19A935042BE16022006830F0 /* Sources */,
 				19A935052BE16022006830F0 /* Frameworks */,
 				19A935062BE16022006830F0 /* Resources */,
-				198149012BE22AFB00BF1A43 /* Carthage */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Mex;
+			packageProductDependencies = (
+				198BED1C2BEE2CEF00019B3D /* OAuthSwift */,
+			);
 			productName = Mex;
 			productReference = 19A935082BE16022006830F0 /* Mex.app */;
 			productType = "com.apple.product-type.application";
@@ -389,6 +389,9 @@
 				Base,
 			);
 			mainGroup = 19A934FF2BE16022006830F0;
+			packageReferences = (
+				198BED1B2BEE2CEE00019B3D /* XCRemoteSwiftPackageReference "OAuthSwift" */,
+			);
 			productRefGroup = 19A935092BE16022006830F0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -427,28 +430,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		198149012BE22AFB00BF1A43 /* Carthage */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/OAuthSwift.framework",
-			);
-			name = Carthage;
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19A935042BE16022006830F0 /* Sources */ = {
@@ -815,6 +796,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		198BED1B2BEE2CEE00019B3D /* XCRemoteSwiftPackageReference "OAuthSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OAuthSwift/OAuthSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		198BED1C2BEE2CEF00019B3D /* OAuthSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 198BED1B2BEE2CEE00019B3D /* XCRemoteSwiftPackageReference "OAuthSwift" */;
+			productName = OAuthSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		19A935162BE16025006830F0 /* Mex.xcdatamodeld */ = {
