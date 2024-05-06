@@ -5,5 +5,8 @@
 # Sensitive data
 Mex/Twitter/TwitterAuth.plist
 
+.swiftpm/*
+.build/*
+
 # Any file in Carthage folder
 Carthage/
