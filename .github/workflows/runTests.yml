@@ -16,7 +16,7 @@ jobs:
 
     - name: Run tests
       run: |
-        xcodebuild test -project Mex.xcodeproj -scheme MexTests -destination 'platform=iOS Simulator,name=iPhone 14'
+        xcodebuild -project Mex.xcodeproj -scheme Mex -destination 'platform=iOS Simulator,name=iPhone 14' '-only-testing:MexTests' test
 
 
     - name: Archive test results

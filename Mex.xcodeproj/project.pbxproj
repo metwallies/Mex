@@ -109,6 +109,7 @@
 		19E1259D2BE30A2A005B7D07 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		19E1259F2BE31A31005B7D07 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
 		19E125A22BE396F4005B7D07 /* CacheLoginModelService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheLoginModelService.swift; sourceTree = "<group>"; };
+		19F3C8F02BEE4F4500E8859E /* UnitTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = UnitTests.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +241,7 @@
 		19A935202BE16026006830F0 /* MexTests */ = {
 			isa = PBXGroup;
 			children = (
+				19F3C8F02BEE4F4500E8859E /* UnitTests.xctestplan */,
 				19A935212BE16026006830F0 /* MexTests.swift */,
 				19908CD02BE63DF200EB2549 /* OAuthWrapperTests.swift */,
 				1974FC9E2BE66D1C0088B04C /* OAuth1SwiftMock.swift */,
