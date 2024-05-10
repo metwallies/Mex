@@ -2,9 +2,6 @@
 *.xcscheme
 *.xcbkptlist
 
-# Sensitive data
-Mex/Twitter/TwitterAuth.plist
-
 .swiftpm/*
 .build/*
 
